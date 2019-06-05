@@ -65,10 +65,14 @@ html, body {
 .centered {
 	margin: 0 auto;
 }
+.text-muted {
+	color: rgb(134, 130, 126);
+}
 
 .container {
 	width: @width;
 	flex-direction: column;
+	color: #282828;
 	.centered();
 	.flex-display();
 	.header {
@@ -84,6 +88,32 @@ html, body {
 					font-size: 1.5rem;
 				}
 			}
+		}
+	}
+	.main {
+		width: @width;
+		.centered();
+		.intro {
+			.tagline {
+				font-size: 2rem;
+			}
+			.intro-text {
+				font-size: 1rem;
+				.text-muted();
+			}
+
+		}
+		.exp-and-skills {
+
+			.experience {
+
+			}
+			.skills {
+
+			}
+		}
+		.contact {
+
 		}
 	}
 }

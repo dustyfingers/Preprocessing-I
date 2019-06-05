@@ -140,9 +140,13 @@ body {
 .centered {
   margin: 0 auto;
 }
+.text-muted {
+  color: #86827e;
+}
 .container {
   width: 90%;
   flex-direction: column;
+  color: #282828;
   margin: 0 auto;
   display: flex;
 }
@@ -160,4 +164,15 @@ body {
 .container .header nav .nav-list li {
   margin-right: 1rem;
   font-size: 1.5rem;
+}
+.container .main {
+  width: 90%;
+  margin: 0 auto;
+}
+.container .main .intro .tagline {
+  font-size: 2rem;
+}
+.container .main .intro .intro-text {
+  font-size: 1rem;
+  color: #86827e;
 }
