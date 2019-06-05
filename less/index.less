@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+
 // Is this working?
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
@@ -55,18 +57,33 @@ table {
 
 html, body {
 	height: 100%;
+	font-family: Roboto, 'sans-serif';
 }
+
 
 // custom styles start here
 @width: 90%;
 .flex-display {
 	display: flex;
 }
+.flex-col-and-space-between {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
 .centered {
 	margin: 0 auto;
 }
-.text-muted {
-	color: rgb(134, 130, 126);
+.muted-box {
+	background-color: rgba(246, 246, 246, 0.1);
+	border-radius: 10px;
+	margin: 2rem;
+	box-shadow: 10px 11px 28px -7px rgba(0,0,0,0.16);
+	padding: 2rem;
+}
+.section-header {
+	font-size: 1.5rem;
+	margin-bottom: 2rem;
 }
 
 .container {
@@ -94,27 +111,75 @@ html, body {
 		width: @width;
 		.centered();
 		.intro {
+			.muted-box();
 			.tagline {
 				font-size: 2rem;
+				margin-bottom: 2rem;
 			}
 			.intro-text {
 				font-size: 1rem;
-				.text-muted();
 			}
 
 		}
 		.exp-and-skills {
-
+			.flex-display();
+			justify-content:  space-between;
 			.experience {
-
+				.muted-box();
+				.flex-col-and-space-between();
+				width: 75%;
+				h2 {
+					.section-header();
+				}
+				.exp-boxes {
+					.flex-col-and-space-between();
+					.exp-card {
+						.flex-col-and-space-between();
+						margin: 1rem;
+						h2 {
+							.section-header();
+						}
+						ul {
+							list-style-type: disc;
+						}
+					}
+				}
 			}
 			.skills {
-
+				h2 {
+					.section-header();
+				}
+				.muted-box();
+				width: 25%;
 			}
 		}
-		.contact {
-
+		.contact-info {
+			.muted-box();
+			.section-header();
+		}
+		footer {
+			.flex-display();
+			justify-content: center;
+			margin: 2rem;
 		}
 	}
+	@media (max-width: 750px) {
+		.header {
+			justify-content: center;
+		}
+		 .main {
+			.exp-and-skills {
+				flex-direction: column;
+				.experience {
+					width: 100%;
+				}
+				.skills {
+					width: 100%;
+				}
+			}
+		 }
+	}
 }
+
+
 
